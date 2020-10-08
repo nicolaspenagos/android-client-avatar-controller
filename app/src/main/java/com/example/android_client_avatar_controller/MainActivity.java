@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText nicknameEditText;
     private Button okButton;
 
+    // -------------------------------------
+    // Android methods
+    // -------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -56,6 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
                 }
         );
-        
+
     }
 }
