@@ -15,13 +15,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.android_client_avatar_controller.model.Name;
+import com.google.gson.Gson;
+
+import java.util.UUID;
+
+public class MainActivity extends AppCompatActivity implements OnMessageListener{
 
     // -------------------------------------
     // XML references
     // -------------------------------------
     private EditText nicknameEditText;
     private Button okButton;
+
+    // -------------------------------------
+    // Global assets
+    // -------------------------------------
+    private Gson gson;
+    private TCPConnection tcp;
 
     // -------------------------------------
     // Android methods
@@ -39,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         animationDrawable.setExitFadeDuration(4000);
         animationDrawable.start();
 
+        gson = new Gson();
+        tcp = TCPConnection.getInstance();
+        tcp.setObserver(this);
+
         nicknameEditText = findViewById(R.id.nicknameEditText);
         okButton = findViewById(R.id.okButton);
 
@@ -48,8 +63,15 @@ public class MainActivity extends AppCompatActivity {
                     String nickname = nicknameEditText.getText().toString();
                     if( nickname!=null && !nickname.equals("") ){
 
+                        String id = UUID.randomUUID().toString();
+                        String description = "Is the nickname for the avatar";
+
+                        Name name = new Name(id, nickname, description);
+                        String json = gson.toJson(name);
+                        
+                        tcp.sendMessage(json);
+
                         Intent i = new Intent(this, ControllerActivity.class);
-                        i.putExtra("nickname", nickname);
                         startActivity(i);
                         finish();
 
@@ -61,4 +83,13 @@ public class MainActivity extends AppCompatActivity {
         );
 
     }
+
+    // -------------------------------------
+    // TCP Methods
+    // -------------------------------------
+    @Override
+    public void onMessage(String msg) {
+
+    }
+
 }

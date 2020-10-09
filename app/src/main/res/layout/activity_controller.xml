@@ -61,7 +61,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/colorButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/change_random_color"
