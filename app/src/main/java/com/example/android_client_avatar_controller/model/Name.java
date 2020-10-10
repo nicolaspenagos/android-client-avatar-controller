@@ -7,6 +7,8 @@ package com.example.android_client_avatar_controller.model;
 
 public class Name {
 
+    private String type = "Name";
+
     // -------------------------------------
     // Attributtes
     // -------------------------------------

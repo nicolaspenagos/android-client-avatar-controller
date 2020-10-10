@@ -229,7 +229,7 @@ public class ControllerActivity extends AppCompatActivity implements View.OnTouc
     public void move(Dirs dirs){
 
         String id, description, json;
-        int dir;
+        Dirs dir;
         Direction direction;
 
         switch (dirs){
@@ -237,7 +237,7 @@ public class ControllerActivity extends AppCompatActivity implements View.OnTouc
             case UP:
 
                 id = UUID.randomUUID().toString();
-                dir = 0;
+                dir = Dirs.UP;
                 description = "Direction for the movement of the avatar";
 
                 direction = new Direction(id,dir,description);
@@ -249,7 +249,7 @@ public class ControllerActivity extends AppCompatActivity implements View.OnTouc
             case DOWN:
 
                 id = UUID.randomUUID().toString();
-                dir = 1;
+                dir = Dirs.DOWN;
                 description = "Direction for the movement of the avatar";
 
                 direction = new Direction(id,dir,description);
@@ -261,7 +261,7 @@ public class ControllerActivity extends AppCompatActivity implements View.OnTouc
             case RIGHT:
 
                 id = UUID.randomUUID().toString();
-                dir = 2;
+                dir = Dirs.RIGHT;
                 description = "Direction for the movement of the avatar";
 
                 direction = new Direction(id,dir,description);
@@ -273,7 +273,7 @@ public class ControllerActivity extends AppCompatActivity implements View.OnTouc
             case LEFT:
 
                 id = UUID.randomUUID().toString();
-                dir = 3;
+                dir = Dirs.LEFT;
                 description = "Direction for the movement of the avatar";
 
                 direction = new Direction(id,dir,description);

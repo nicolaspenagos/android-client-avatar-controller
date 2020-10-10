@@ -108,6 +108,7 @@ public class TCPConnection extends Thread{
     public OnMessageListener getObserver() {
         return observer;
     }
+
     public void setObserver(OnMessageListener observer) {
         this.observer = observer;
     }
