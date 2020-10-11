@@ -57,7 +57,7 @@ public class TCPConnection extends Thread{
 
         try {
 
-            Socket socket = new Socket("192.168.20.25", 5000);
+            Socket socket = new Socket("192.168.0.17", 5000);
 
             writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -79,16 +79,16 @@ public class TCPConnection extends Thread{
 
         new Thread(
                 ()->{
-/*
+
                     try {
 
-                       // writer.flush();
-                       // writer.write(msg+"\n");
+                       writer.flush();
+                       writer.write(msg+"\n");
 
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-*/
+
                 }
         ).start();
 
