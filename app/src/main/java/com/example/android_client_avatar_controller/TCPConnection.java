@@ -82,8 +82,8 @@ public class TCPConnection extends Thread{
 
                     try {
 
-                       writer.flush();
                        writer.write(msg+"\n");
+                       writer.flush();
 
                     } catch (IOException e) {
                         e.printStackTrace();
