@@ -1,7 +1,7 @@
 # android-client-avatar-controller
 This is a simple lab for practicing TCP using Singleton and Observer patterns between Eclipse and Android nodes to move an avatar on a screen. This repository contains the ANDROID NODE (client).
 
-![avatar-controller_Mesa de trabajo 1](https://user-images.githubusercontent.com/47872252/95795628-6f89a080-0cb0-11eb-9312-efdab617c2fa.png)
+![avatar-controller_Mesa de trabajo 1_Mesa de trabajo 1](https://user-images.githubusercontent.com/47872252/95795862-08202080-0cb1-11eb-851d-bdd7b8c65ab7.png)
 
 ## Made by
   <ul>
